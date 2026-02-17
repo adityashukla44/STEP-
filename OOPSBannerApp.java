@@ -1,7 +1,7 @@
 public class OOPSBannerApp {
     public static void main(String[] args) {
         String line1 = String.join("  ", " *** ", " *** ", "****", " *** ");
-        String line2 = String.join("  ", "*   *", "*   *", "*   *", "*   *");
+        String line2 = String.join("  ", "*   *", "*   *", "*   *", "*    ");
         String line3 = String.join("  ", "*   *", "*   *", "****", " *** ");
         String line4 = String.join("  ", "*   *", "*   *", "*   ", "    *");
         String line5 = String.join("  ", " *** ", " *** ", "*   ", " *** ");
