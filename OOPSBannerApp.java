@@ -1,29 +1,47 @@
 public class OOPSBannerApp {
+
+    static class CharacterPatternMap {
+        private char character;
+        private String[] pattern;
+
+        CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        char getCharacter() {
+            return character;
+        }
+
+        String[] getPattern() {
+            return pattern;
+        }
+    }
+
     public static void main(String[] args) {
-        String[] o1 = getO();
-        String[] o2 = getO();
-        String[] p = getP();
-        String[] s = getS();
+        CharacterPatternMap[] patterns = {
+            new CharacterPatternMap('O', new String[] {" *** ", "*   *", "*   *", "*   *", " *** "}),
+            new CharacterPatternMap('P', new String[] {"****", "*   *", "****", "*   ", "*   "}),
+            new CharacterPatternMap('S', new String[] {" *** ", "*    ", " *** ", "    *", " *** "})
+        };
 
-        String[] banner = new String[5];
-        for (int i = 0; i < 5; i++) {
-            banner[i] = String.join("  ", o1[i], o2[i], p[i], s[i]);
+        String word = "OOPS";
+
+        for (int row = 0; row < 5; row++) {
+            StringBuilder line = new StringBuilder();
+            for (int j = 0; j < word.length(); j++) {
+                char ch = word.charAt(j);
+                for (CharacterPatternMap cpm : patterns) {
+                    if (cpm.getCharacter() == ch) {
+                        if (line.length() > 0) {
+                            line.append("  ");
+                        }
+                        line.append(cpm.getPattern()[row]);
+                        break;
+                    }
+                }
+            }
+            System.out.println(line.toString());
         }
-
-        for (String line : banner) {
-            System.out.println(line);
-        }
-    }
-
-    static String[] getO() {
-        return new String[] {" *** ", "*   *", "*   *", "*   *", " *** "};
-    }
-
-    static String[] getP() {
-        return new String[] {"****", "*   *", "****", "*   ", "*   "};
-    }
-
-    static String[] getS() {
-        return new String[] {" *** ", "*    ", " *** ", "    *", " *** "};
     }
 }
