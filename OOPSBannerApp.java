@@ -7,7 +7,7 @@ public class OOPSBannerApp {
         Map<Character, String[]> patternMap = new HashMap<>();
 
         patternMap.put('O', new String[] {" *** ", "*   *", "*   *", "*   *", " *** "});
-        patternMap.put('P', new String[] {"****", "*   *", "****", "*   ", "*   "});
+        patternMap.put('P', new String[] {"**** ", "*   *", "**** ", "*    ", "*    "});
         patternMap.put('S', new String[] {" *** ", "*    ", " *** ", "    *", " *** "});
 
         String word = "OOPS";
